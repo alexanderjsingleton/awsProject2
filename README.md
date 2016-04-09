@@ -1,2 +1,2 @@
 # awsProject2
-A repo for academic work concerning graduate-level experimentation at GW.
+A repo for academic experimentation with Bitnami LAMP on Amazon Bitnami ec2 instance.
