@@ -298,22 +298,7 @@ function test_input($data) {
           $conn->error . "<br><br>";
     }
     
- echo <<<_END
-  <form action="mysqltest.php" method="post"><pre>
-    First_name <input type="text" name="first_name">
-     Last_name <input type="text" name="last_name">
-     Email <input type="text" name="email">
-     Phone <input type="text" name="phone">
-     Address <input type="text" name="address">
-     City <input type="text" name="city">
-     State <input type="text" name="state">
-     Zip_code <input type="text" name="zip_code">
-     Website <input type="text" name="website">
-     Hosting Last_name <input type="text" name="hosting">
-     Project <input type="text" name="project">
-           <input type="submit" value="ADD RECORD">
-  </pre></form>
-_END;
+ 
 
   $query  = "SELECT * FROM mymembers";
   $result = $conn->query($query);
