@@ -10,7 +10,7 @@
   <link rel="icon" href="BucephalusDev-Favicon.png">
   <title>Sticky Footer Navbar Template for Bootstrap</title>
   <!-- Bootstrap core CSS -->
-  <link href="bootstrap-3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <link href="bootstrap-3.3.6/docs/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -18,7 +18,7 @@
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
-  <script src="bootstrap-3.3.6/docs/assets/js/ie-emulation-modes-warning.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -27,7 +27,7 @@
 </head>
 <body>
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-default navbar-fixed-top">
+<!--   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -56,9 +56,9 @@
           </ul>
         </li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>/.nav-collapse
   </div>
-</nav>
+</nav>  -->
 <?php
 $nameErr = $emailErr = $phoneErr = $addressErr = $cityErr = $stateErr = $zip_codeErr = $websiteErr = $hostingErr = $projectErr = "";
 $name = $email = $phone = $address = $city = $state = $zip_code = $website = $hosting = $project =  "";
@@ -99,20 +99,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    } else {
      $phone = test_input($_POST["phone"]);
      // check if phone only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$phone)) {
+     if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$phone)) {
        $phoneErr = "Only letters and white space allowed"; 
      }
    }
 
-   if (empty($_POST["address"])) {
-     $addressErr = "address is required";
-   } else {
-     $address = test_input($_POST["address"]);
-     // check if address only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$address)) {
-       $addressErr = "Only letters and white space allowed"; 
-     }
-   }
+   // if (empty($_POST["address"])) {
+   //   $addressErr = "address is required";
+   // } else {
+   //   $address = test_input($_POST["address"]);
+   //   // check if address only contains letters and whitespace
+   //   if (!preg_match("/^[a-zA-Z]([a-zA-Z-]+\s)+\d{1,4}$/",$address)) {
+   //     $addressErr = "Only letters and white space allowed"; 
+   //   }
+   // }
 
    if (empty($_POST["city"])) {
      $cityErr = "city is required";
@@ -124,22 +124,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      }
    }
 
-   if (empty($_POST["state"])) {
-     $stateErr = "state is required";
-   } else {
-     $state = test_input($_POST["state"]);
-     // check if state only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
-       $stateErr = "Only letters and white space allowed"; 
-     }
-   }
+   // if (empty($_POST["state"])) {
+   //   $stateErr = "state is required";
+   // } else {
+   //   $state = test_input($_POST["state"]);
+   //   // check if state only contains letters and whitespace
+   //   if (!preg_match("/^(?:\\d+ [a-zA-Z ]+, ){2}[a-zA-Z ]+$/",$state)) {
+   //     $stateErr = "Only letters and white space allowed"; 
+   //   }
+   // }
 
    if (empty($_POST["zip_code"])) {
      $zip_codeErr = "zip_code is required";
    } else {
      $zip_code = test_input($_POST["zip_code"]);
      // check if zip_code only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$zip_code)) {
+     if (!preg_match("/^[0-9]{5}([- ]?[0-9]{4})?$/",$zip_code)) {
        $zip_codeErr = "Only letters and white space allowed"; 
      }
    }
@@ -298,8 +298,9 @@ function test_input($data) {
           $conn->error . "<br><br>";
     }
     
- 
 
+
+  
   $query  = "SELECT * FROM mymembers";
   $result = $conn->query($query);
   if (!$result) die ("Database access failed: " . $conn->error);
@@ -342,7 +343,8 @@ _END;
   }
 ?>
   </div>
-  <br><script src="https://gist.github.com/alexanderjsingleton/8a710216c7ebd38a03eb.js"></script></br>
+
+ 
 </div>
 <footer class="footer">
   <div class="container">
