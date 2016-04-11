@@ -190,7 +190,7 @@ function test_input($data) {
     <h1>Registration</h1>
   </div>
   <p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form to apply for verification.</p>
-  <p>As stated within the <a href="register.html">Registration</a> page of this production, this is the registraion form using conventional JavaScript instead of the BootStrap framework validation technique, complementarily included <a href="https://gist.githubusercontent.com/alexanderjsingleton/8a710216c7ebd38a03eb/raw/006985d91d7d5fa66a3e8bec326d14230d7307c9/standard-validation.js">via Secret GitHub Gist</a> (not available to public unless shared) beneath the submit button in the below form.</p>
+  
 </div>
 <div class="container">
   <div class="container">
