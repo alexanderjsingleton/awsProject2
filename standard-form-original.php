@@ -355,7 +355,6 @@ function test_input($data) {
   <form action="standard-form.php" method="post">
   <input type="hidden" name="delete" value="yes">
   <input type="hidden" name="id" value="$row[0]">
-  <input type="submit" value="EDIT RECORD">
   <input type="submit" value="DELETE RECORD"></form>
 _END;
   }
