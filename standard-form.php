@@ -301,6 +301,31 @@ function test_input($data) {
         if (!$result) echo "DELETE failed: $query<br>" .
           $conn->error . "<br><br>";
     }
+
+    if( isset($_POST['edit']) && isset($_POST['id']))
+
+    // {
+    // $id   = get_post($conn, 'id');
+    // $query  = "UPDATE mymembers SET first_name='$first_name', 
+    // last_name='$last_name', 
+    // email='$email', 
+    // phone='$phone', 
+    // address='$address',
+    // city='$city',
+    // state='$state',
+    // last_name='$last_name',
+    // zip_code='$zip_code',
+    // website='$website', 
+    // hosting='$hosting'
+    // project='$project',          
+    // WHERE id='$id'";
+    // $result = $conn->query($query);
+    // if (!$result) echo "UPDATE failed: $query<br>" .
+    //       $conn->error . "<br><br>";
+    // }
+
+    
+
     // if (isset($_POST['first_name']) && isset($_POST['last_name']))
       if (isset($_POST['first_name']) && isset($_POST['last_name']) && $isValid == true)
         
