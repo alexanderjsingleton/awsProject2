@@ -156,6 +156,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $isValid = false; 
      }
    }
+
+
      
    if (empty($_POST["website"])) {
      $website = "";
@@ -302,7 +304,7 @@ function test_input($data) {
           $conn->error . "<br><br>";
     }
 
-    if( isset($_POST['edit']) && isset($_POST['last_name']))
+    if( isset($_POST['edit']) && isset($_POST['id']))
 
     {
     $id   = get_post($conn, 'id');
@@ -323,8 +325,10 @@ function test_input($data) {
     if (!$result) echo "UPDATE failed: $query<br>" .
           $conn->error . "<br><br>";
     }
-  
 
+    
+
+    // if (isset($_POST['first_name']) && isset($_POST['last_name']))
       if (isset($_POST['first_name']) && isset($_POST['last_name']) && $isValid == true)
         
     {
@@ -377,7 +381,6 @@ function test_input($data) {
   </pre>
   <form action="standard-form.php" method="post">
   <input type="hidden" name="delete" value="yes">
-  <input type="hidden" name="edit" value="yes">
   <input type="hidden" name="id" value="$row[0]">
   <input type="submit" value="EDIT RECORD">
   <input type="submit" value="DELETE RECORD"></form>
