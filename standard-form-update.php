@@ -217,79 +217,7 @@ function test_input($data) {
 <div class="container">
   <div class="container">
     <p><span class="error">* required field.</span></p>
-  
-    <form name='mainForm' id='mainForm' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <fieldset>
-        <legend>Required Information:</legend>
-        <div class="form-group">
-          <label for= "first_name" class="control-label col-sm-4">First Name:</label>
-          <input name="first_name"  id="first_name" type="text" value="<?php echo $name;?>" size="30" class="required">
-          <span class="error">* <?php echo $nameErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "last_name" class="control-label col-sm-4">Last Name:</label>
-          <input name="last_name"  id="last_name" type="text" size="30" class="required" value="<?php echo $last_name;?>">
-          <span class="error">* <?php echo $last_nameErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "email" class="control-label col-sm-4">E-mail:</label>
-          <input name="email" id="email" type="text" size="30" class="required" value="<?php echo $email;?>">
-          <span class="error">* <?php echo $emailErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "phone" class="control-label col-sm-4">Phone #:</label>
-          <input name="phone" id="phone" type="text" size="30" class="required" value="<?php echo $phone;?>">
-          <span class="error">* <?php echo $phoneErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "address" class="control-label col-sm-4">Address:</label>
-          <input name="address" id="address" type="text" size="30" class="required" value="<?php echo $address;?>">
-          <span class="error">* <?php echo $addressErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "city" class="control-label col-sm-4">City:</label>
-          <input name="city" id="city" type="text" size="30" class="required" value="<?php echo $city;?>">
-          <span class="error">* <?php echo $cityErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "state" class="control-label col-sm-4">State:</label>
-          <input name="state" id="state" type="text" size="30" class="required" value="<?php echo $state;?>">
-          <span class="error">* <?php echo $stateErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "zip_code" class="control-label col-sm-4">Zip Code:</label>
-          <input name="zip_code" id="zip_code" type="text" size="30" class="required" value="<?php echo $zip_code;?>">
-          <span class="error">* <?php echo $zip_codeErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "website" class="control-label col-sm-4">Website or Domain:</label>
-          <input name="website" id="website" type="text" size="30" class="required" value="<?php echo $website;?>">
-          <span class="error">* <?php echo $websiteErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "hosting" class="control-label col-sm-4">Do you have hosting?</label>
-          <input name="hosting" id="hosting" type="text" size="30" class="required" value="<?php echo $hosting;?>">
-          <span class="error">* <?php echo $hostingErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "project" class="control-label col-sm-4">Project Description:</label>
-          <input name="project" id="project" type="text" size="30" class="required" value="<?php echo $project;?>">
-          <span class="error">* <?php echo $projectErr;?></span>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Optional Information:</legend>
-        <div class='movingDiv'>
-          <label for="how" class="col-md-4 control-label">How did you hear about us?</label>
-          <input name="how" id="how" type="text" size="30">
-        </div>
-      </fieldset><br>
-      <button type="submit" name="create" class="btn btn-primary">Submit</button>
-      <a href="/project2/jquery.php" class="btn btn-info" role="button">jQuery</a>
-      
-    
 
-    </form>
 
     <?php
       require_once 'login.php';
@@ -339,8 +267,18 @@ function test_input($data) {
       if (isset($_POST['update']) && isset($_POST['id']))
 
       {
-        
-
+        $id = $_POST['id'];
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $state = $_POST['state'];
+        $zip_code = $_POST['zip_code'];
+        $website = $_POST['website'];
+        $hosting = $_POST['hosting'];
+        $project = $_POST['project'];
         $query  = "UPDATE mymembers SET first_name='$first_name', 
         last_name='$last_name', 
         email='$email', 
@@ -348,7 +286,6 @@ function test_input($data) {
         address='$address',
         city='$city',
         state='$state',
-        last_name='$last_name',
         zip_code='$zip_code',
         website='$website', 
         hosting='$hosting',
@@ -373,7 +310,81 @@ function test_input($data) {
       $row = $result->fetch_array(MYSQLI_NUM);
 
       echo <<<_END
-      <pre>
+     
+      <form action="standard-form-nick.php" method="POST">
+       <fieldset>
+        <legend>Required Information:</legend>
+        <div class="form-group">
+          <label for= "first_name" class="control-label col-sm-4">First Name:</label>
+          <input name="first_name"  id="first_name" type="text" value="$row[1]" size="30" class="required">
+        </div>
+        <div class="form-group">
+          <label for= "last_name" class="control-label col-sm-4">Last Name:</label>
+          <input name="last_name"  id="last_name" type="text" size="30" class="required" value="$row[2]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "email" class="control-label col-sm-4">E-mail:</label>
+          <input name="email" id="email" type="text" size="30" class="required" value="$row[3]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "phone" class="control-label col-sm-4">Phone #:</label>
+          <input name="phone" id="phone" type="text" size="30" class="required" value="$row[4]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "address" class="control-label col-sm-4">Address:</label>
+          <input name="address" id="address" type="text" size="30" class="required" value="$row[5]">
+        
+        </div>
+        <div class="form-group">
+          <label for= "city" class="control-label col-sm-4">City:</label>
+          <input name="city" id="city" type="text" size="30" class="required" value="$row[6]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "state" class="control-label col-sm-4">State:</label>
+          <input name="state" id="state" type="text" size="30" class="required" value="$row[7]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "zip_code" class="control-label col-sm-4">Zip Code:</label>
+          <input name="zip_code" id="zip_code" type="text" size="30" class="required" value="$row[8]">
+         
+        </div>
+        <div class="form-group">
+          <label for= "website" class="control-label col-sm-4">Website or Domain:</label>
+          <input name="website" id="website" type="text" size="30" class="required" value="$row[9]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "hosting" class="control-label col-sm-4">Do you have hosting?</label>
+          <input name="hosting" id="hosting" type="text" size="30" class="required" value="$row[10]">
+          
+        </div>
+        <div class="form-group">
+          <label for= "project" class="control-label col-sm-4">Project Description:</label>
+          <input name="project" id="project" type="text" size="30" class="required" value="$row[11]">
+          
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Optional Information:</legend>
+        <div class='movingDiv'>
+          <label for="how" class="col-md-4 control-label">How did you hear about us?</label>
+          <input name="how" id="how" type="text" size="30">
+        </div>
+      </fieldset><br>
+    
+      <input type="hidden" name="id" value="$row[0]">
+      <input type="submit" name="update" value="UPDATE RECORD"></form>
+      <form action="standard-form-nick.php" method="POST">
+      <input type="hidden" name="delete" value="yes">
+      <input type="hidden" name="id" value="$row[0]">
+      <input type="submit" value="DELETE RECORD"></form>
+
+        <pre>
       id $row[0]
       First_name $row[1]
       Last_name $row[2]
@@ -387,12 +398,6 @@ function test_input($data) {
       Hosting $row[10]
       Project $row[11]
       </pre>
-      <form action="standard-form.php" method="POST">
-      <input type="hidden" name="delete" value="yes">
-      <input type="hidden" name="id" value="$row[0]">
-      <input type="submit" value="DELETE RECORD"></form>
-      <form action="/project2/standard-form-update.php">
-      <input type="submit" value="REVISE RECORD"></form>
 _END;
 
       }
@@ -405,6 +410,12 @@ _END;
         return $conn->real_escape_string($_POST[$var]);
       }
     ?>
+
+
+
+
+
+
 
   </div>
 
