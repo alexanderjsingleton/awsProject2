@@ -36,7 +36,7 @@
   <div class="page-header">
     <h1>jQuery</h1>
   </div>
-  <p class="lead">HTML content that accessed via jQuery</h2>
+  <p class="lead">HTML content that is accessed via jQuery</h2>
   <h3>Output: </h3>
   <div id="msg">This element will return each iteration through the JSON string via jQuery.</div>
 
