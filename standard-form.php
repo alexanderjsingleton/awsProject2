@@ -65,7 +65,7 @@
 </div>
 <div class="container">
   <div class="container">
-    <p><span class="error"><p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form to apply for verification.</p></span></p>
+    <p><span class="error"><p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form and click "Submit" to apply for verification.</p></span></p>
   
     <form name='mainForm' id='mainForm' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <fieldset>

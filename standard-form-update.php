@@ -27,7 +27,7 @@
 </head>
 <body>
   <!-- Fixed navbar -->
-<!--   <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,181 +37,28 @@
           <span class="icon-bar"></span>
         </button>
         <a class="logo" rel="home" href="#" title="The George Washington University">
-          <img src="gwu.png">
+          <img src="http://i.imgur.com/jTkgE1J.png">
         </a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="members.html">Members</a></li>
-          <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-            <li class="active"><a href="standard-form.html">Standard Form Validation</a></li>
-            <li><a href="#">Coming Soon?</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Would you like to know more?</li>
-            <li><a href="#">Ready Player One</a></li>
-          </ul>
+          <li><a href="/project2/standard-form.php">Home</a></li>
+          <li><a href="/project2/standard-form.php">Register</a></li>
+          <li><a href="/project2/jquery.php">Members</a></li>
+          <li><a href="/project2/standard-form-update.php">Revise</a></li>
+          
+          
         </li>
       </ul>
-    </div>/.nav-collapse
+    </div><!--/.nav-collapse -->
   </div>
-</nav>  -->
-<?php
-$first_nameErr = $last_nameErr = $emailErr = $phoneErr = $addressErr = $cityErr = $stateErr = $zip_codeErr = $websiteErr = $hostingErr = $projectErr = "";
-$first_name = $last_name = $email = $phone = $address = $city = $state = $zip_code = $website = $hosting = $project =  "";
-$isValid = true;
+</nav>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   if (empty($_POST["first_name"])) {
-     $first_nameErr = "first_name is required";
-     $isValid = false;
-   } else {
-     $first_name = test_input($_POST["first_name"]);
-     // check if first_name only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
-       $first_nameErr = "Only letters and white space allowed"; 
-       $isValid = false;
-     }
-   }
-
-   if (empty($_POST["last_name"])) {
-     $last_nameErr = "last_name is required";
-     $isValid = false;
-   } else {
-     $last_name = test_input($_POST["last_name"]);
-     // check if last_name only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$last_name)) {
-       $last_nameErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-   
-   if (empty($_POST["email"])) {
-     $emailErr = "Email is required";
-     $isValid = false;
-   } else {
-     $email = test_input($_POST["email"]);
-     // check if e-mail address is well-formed
-     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-       $emailErr = "Invalid email format";
-       $isValid = false; 
-     }
-   }
-
-   if (empty($_POST["phone"])) {
-     $phoneErr = "phone is required";
-     $isValid = false;
-   } else {
-     $phone = test_input($_POST["phone"]);
-     // check if phone only contains letters and whitespace
-     if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$phone)) {
-       $phoneErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-
-   // if (empty($_POST["address"])) {
-   //   $addressErr = "address is required";
-   // } else {
-   //   $address = test_input($_POST["address"]);
-   //   // check if address only contains letters and whitespace
-   //   if (!preg_match("/^[a-zA-Z]([a-zA-Z-]+\s)+\d{1,4}$/",$address)) {
-   //     $addressErr = "Only letters and white space allowed"; 
-   //   }
-   // }
-
-   if (empty($_POST["city"])) {
-     $cityErr = "city is required";
-     $isValid = false;
-   } else {
-     $city = test_input($_POST["city"]);
-     // check if city only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
-       $cityErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-
-   // if (empty($_POST["state"])) {
-   //   $stateErr = "state is required";
-   // } else {
-   //   $state = test_input($_POST["state"]);
-   //   // check if state only contains letters and whitespace
-   //   if (!preg_match("/^(?:\\d+ [a-zA-Z ]+, ){2}[a-zA-Z ]+$/",$state)) {
-   //     $stateErr = "Only letters and white space allowed"; 
-   //   }
-   // }
-
-   if (empty($_POST["zip_code"])) {
-     $zip_codeErr = "zip_code is required";
-     $isValid = false;
-   } else {
-     $zip_code = test_input($_POST["zip_code"]);
-     // check if zip_code only contains letters and whitespace
-     if (!preg_match("/^[0-9]{5}([- ]?[0-9]{4})?$/",$zip_code)) {
-       $zip_codeErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-     
-   if (empty($_POST["website"])) {
-     $website = "";
-     $isValid = false;
-   } else {
-     $website = test_input($_POST["website"]);
-     // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-       $websiteErr = "Invalid URL";
-       $isValid = false; 
-     }
-   }
-
-   if (empty($_POST["hosting"])) {
-     $hostingErr = "hosting is required";
-     $isValid = false;
-   } else {
-     $hosting = test_input($_POST["hosting"]);
-     // check if hosting only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$hosting)) {
-       $hostingErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-
-   if (empty($_POST["project"])) {
-     $projectErr = "project is required";
-     $isValid = false;
-   } else {
-     $project = test_input($_POST["project"]);
-     // check if project only contains letters and whitespace
-     if (!preg_match("/^[a-zA-Z ]*$/",$project)) {
-       $projectErr = "Only letters and white space allowed";
-       $isValid = false; 
-     }
-   }
-
-  
-}
-
-function test_input($data) {
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-   return $data;
-}
-
-
-
-?>
-<!-- Begin page content -->
 <div class="container">
   <div class="page-header">
-    <h1>Registration</h1>
+  
   </div>
-  <p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form to apply for verification.</p>
+  <h1>Update Contact Information</h1>
   
 </div>
 <div class="container">
@@ -418,6 +265,157 @@ _END;
 
 
   </div>
+
+
+
+<?php
+$first_nameErr = $last_nameErr = $emailErr = $phoneErr = $addressErr = $cityErr = $stateErr = $zip_codeErr = $websiteErr = $hostingErr = $projectErr = "";
+$first_name = $last_name = $email = $phone = $address = $city = $state = $zip_code = $website = $hosting = $project =  "";
+$isValid = true;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   if (empty($_POST["first_name"])) {
+     $first_nameErr = "first_name is required";
+     $isValid = false;
+   } else {
+     $first_name = test_input($_POST["first_name"]);
+     // check if first_name only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
+       $first_nameErr = "Only letters and white space allowed"; 
+       $isValid = false;
+     }
+   }
+
+   if (empty($_POST["last_name"])) {
+     $last_nameErr = "last_name is required";
+     $isValid = false;
+   } else {
+     $last_name = test_input($_POST["last_name"]);
+     // check if last_name only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$last_name)) {
+       $last_nameErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+   
+   if (empty($_POST["email"])) {
+     $emailErr = "Email is required";
+     $isValid = false;
+   } else {
+     $email = test_input($_POST["email"]);
+     // check if e-mail address is well-formed
+     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+       $emailErr = "Invalid email format";
+       $isValid = false; 
+     }
+   }
+
+   if (empty($_POST["phone"])) {
+     $phoneErr = "phone is required";
+     $isValid = false;
+   } else {
+     $phone = test_input($_POST["phone"]);
+     // check if phone only contains letters and whitespace
+     if (!preg_match("/^(\d[\s-]?)?[\(\[\s-]{0,2}?\d{3}[\)\]\s-]{0,2}?\d{3}[\s-]?\d{4}$/i",$phone)) {
+       $phoneErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+
+   // if (empty($_POST["address"])) {
+   //   $addressErr = "address is required";
+   // } else {
+   //   $address = test_input($_POST["address"]);
+   //   // check if address only contains letters and whitespace
+   //   if (!preg_match("/^[a-zA-Z]([a-zA-Z-]+\s)+\d{1,4}$/",$address)) {
+   //     $addressErr = "Only letters and white space allowed"; 
+   //   }
+   // }
+
+   if (empty($_POST["city"])) {
+     $cityErr = "city is required";
+     $isValid = false;
+   } else {
+     $city = test_input($_POST["city"]);
+     // check if city only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
+       $cityErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+
+   // if (empty($_POST["state"])) {
+   //   $stateErr = "state is required";
+   // } else {
+   //   $state = test_input($_POST["state"]);
+   //   // check if state only contains letters and whitespace
+   //   if (!preg_match("/^(?:\\d+ [a-zA-Z ]+, ){2}[a-zA-Z ]+$/",$state)) {
+   //     $stateErr = "Only letters and white space allowed"; 
+   //   }
+   // }
+
+   if (empty($_POST["zip_code"])) {
+     $zip_codeErr = "zip_code is required";
+     $isValid = false;
+   } else {
+     $zip_code = test_input($_POST["zip_code"]);
+     // check if zip_code only contains letters and whitespace
+     if (!preg_match("/^[0-9]{5}([- ]?[0-9]{4})?$/",$zip_code)) {
+       $zip_codeErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+     
+   if (empty($_POST["website"])) {
+     $website = "";
+     $isValid = false;
+   } else {
+     $website = test_input($_POST["website"]);
+     // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+     if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+       $websiteErr = "Invalid URL";
+       $isValid = false; 
+     }
+   }
+
+   if (empty($_POST["hosting"])) {
+     $hostingErr = "hosting is required";
+     $isValid = false;
+   } else {
+     $hosting = test_input($_POST["hosting"]);
+     // check if hosting only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$hosting)) {
+       $hostingErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+
+   if (empty($_POST["project"])) {
+     $projectErr = "project is required";
+     $isValid = false;
+   } else {
+     $project = test_input($_POST["project"]);
+     // check if project only contains letters and whitespace
+     if (!preg_match("/^[a-zA-Z ]*$/",$project)) {
+       $projectErr = "Only letters and white space allowed";
+       $isValid = false; 
+     }
+   }
+
+  
+}
+
+function test_input($data) {
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
+}
+
+
+
+?>
+<!-- Begin page content -->
 
  
 </div>

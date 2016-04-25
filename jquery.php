@@ -24,22 +24,55 @@
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-
   <![endif]-->
+</head>
 <body>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="logo" rel="home" href="#" title="The George Washington University">
+          <img src="http://i.imgur.com/jTkgE1J.png">
+        </a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/project2/standard-form.php">Home</a></li>
+          <li><a href="/project2/standard-form.php">Register</a></li>
+          <li><a href="/project2/jquery.php">Members</a></li>
+          <li><a href="/project2/standard-form-update.php">Revise</a></li>
+          
+          
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+
+
+<!---------------------------------------------------------------------------
+Example client script for JQUERY:AJAX -> PHP:MYSQL example
+---------------------------------------------------------------------------->
+
+
+
 
   <!-------------------------------------------------------------------------
   1) Create some html content that can be accessed by jquery
   -------------------------------------------------------------------------->
-<div class="container">
+  <div class="container">
   <div class="page-header">
-    <h1>jQuery</h1>
   </div>
-  <p class="lead">HTML content that is accessed via jQuery</h2>
-  <h3>Output: </h3>
-  <div id="msg">This element will return each iteration through the JSON string via jQuery.</div>
-
+  <h1>jQuery</h1>
+  <h2>Output: HTML content that is accessed via jQuery </h2>
+  <div id="msg">This element will return each iteration of the JSON string via jQuery.</div>
 
 <script type="text/javascript">
  
@@ -50,7 +83,7 @@ $.getJSON(url,function(json){
 $.each(json,function(i,dat){
 $("#msg").append(
 '<div class="mymembers">'+
-'<h1>Record  '+dat.id+'</h1>'+
+'<h1>'+dat.id+'</h1>'+
 '<p>First Name : <em>'+dat.first_name+'</em>'+
 '<p>Last Name : <em>'+dat.last_name+'</em></p>'+
 '<p>Email : <em>'+dat.email+'</em></p>'+
@@ -69,32 +102,7 @@ $("#msg").append(
 });
  
 </script>
-  </div>
-  
-
 
 
   </body>
-<footer class="footer">
-  <div class="container">
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact_us.html">Contact</a></li>
-      </li>
-    </ul>
-  </div><!--/.nav-collapse -->
-</div>
-</nav>
-</footer>
-<!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-  <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="bootstrap-3.3.6/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
 </html>
