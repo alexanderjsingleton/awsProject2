@@ -46,6 +46,7 @@
           <li><a href="/project2/standard-form.php">Register</a></li>
           <li><a href="/project2/jquery.php">Members</a></li>
           <li><a href="/project2/standard-form-update.php">Revise</a></li>
+          <li><a href="https://github.com/alexanderjsingleton/awsProject2/blob/master/README.md">Dox</a></li>
           
           
         </li>

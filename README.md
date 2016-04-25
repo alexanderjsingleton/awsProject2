@@ -7,7 +7,7 @@
 
 2. Example link provided:
 
-    1. A Bitnami LAMP on Amazon Bitnami ec2 instance to develop a web application that is able to validate user input as well as store, retrieve, update and delete items in a database following URL:
+    1. A Bitnami LAMP on Amazon Bitnami ec2 instance to develop a web application that is able to validate user input as well as store, retrieve, update and delete items in a database following URL(or [click here](http://ec2-52-33-59-87.us-west-2.compute.amazonaws.com/project2/standard-form.php):
 
         1. `http://ec2-52-33-59-87.us-west-2.compute.amazonaws.com/project2/standard-form.php`
 
@@ -17,17 +17,17 @@
 
     3. In order to accommodate the aforementioned, the most recent version of Bootstrap was downloaded and included with source files.
 
-        2. The navigation-bar menu should feature an appropriate logo for the production, in addition to three tabs respectively navigating to  "Register" and “Members” pages of the site,  in addition to a “Dropdown” tab, which may feature three optional pages if need be.
+        2. The navigation-bar menu should feature an appropriate logo for the production, in addition to three tabs respectively navigating to  "Register" and “Members” pages of the site,  in addition to a “Revise” and "Dox" tab.
 
           1. Please note, all Bootstrap files are retrieved remotely via the following URL's `https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css` & `https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js`.
 
         3. All of the aforementioned sections are constituents of the general website layout.
 
-    4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with in-line php-Regex.
+    4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with in-line [php RegEx](http://www.tutorialspoint.com/php/php_regular_expression.htm).
 
-        5. Unlike Project I, Project II form-validation within the "Register section" of landing-page of the site is enabled by manual [php RegEx](http://www.tutorialspoint.com/php/php_regular_expression.htm) performing form-validation via php regular expressions (RegEx) in order to ultimately submit the field-form as a record to the MySQL database residiing on the AWS instance, server-side.
+        5. Unlike Project I, Project II form-validation within the "Register section" of landing-page of the site is enabled by manual php RegEx performing form-validation via php regular expressions (RegEx) in order to ultimately submit the field-form as a record to the MySQL database residiing on the AWS instance, server-side.
 
-        6. If the user were to test the validation without populating the necessary fields (in this case, all), the form will not process and flag required fields.  However, if the user populates every field, albeit incorrectly, the form will not process as the Modernizr API accounts for all of the required formats listed.
+        6. If the user were to test the validation without populating the necessary fields (in this case, all), the form will not process and flag required fields.  However, if the user populates every field, albeit incorrectly, the form will not process as the php RegEx ccounts for all of the required formats listed.
 
             2. First Name
 
