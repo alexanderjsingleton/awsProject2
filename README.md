@@ -1,7 +1,7 @@
 # GWMSIST
 
 ## awsProject2
-### A repo for academic experimentation with Bitnami LAMP on Amazon Bitnami ec2 instance.
+### A repo for academic experimentation with Amazon Bitnami ec2 instance.
 
 1.Requirements listed below documentation.
 
