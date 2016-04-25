@@ -27,7 +27,7 @@
 </head>
 <body>
   <!-- Fixed navbar -->
-<!--   <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,28 +37,109 @@
           <span class="icon-bar"></span>
         </button>
         <a class="logo" rel="home" href="#" title="The George Washington University">
-          <img src="gwu.png">
+          <img src="http://i.imgur.com/jTkgE1J.png">
         </a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="members.html">Members</a></li>
-          <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-            <li class="active"><a href="standard-form.html">Standard Form Validation</a></li>
-            <li><a href="#">Coming Soon?</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Would you like to know more?</li>
-            <li><a href="#">Ready Player One</a></li>
-          </ul>
+          <li><a href="/project2/standard-form.php">Home</a></li>
+          <li><a href="/project2/standard-form.php">Register</a></li>
+          <li><a href="/project2/jquery.php">Members</a></li>
+          <li><a href="/project2/standard-form-update.php">Revise</a></li>
+          
+          
         </li>
       </ul>
-    </div>/.nav-collapse
+    </div><!--/.nav-collapse -->
   </div>
-</nav>  -->
+</nav>
+
+
+<!-- Begin page content -->
+
+<div class="container">
+  <div class="page-header">
+    
+  </div>
+  <h1>Register</h1>
+</div>
+<div class="container">
+  <div class="container">
+    <p><span class="error"><p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form to apply for verification.</p></span></p>
+  
+    <form name='mainForm' id='mainForm' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <fieldset>
+        <legend>Required Information:</legend>
+        <div class="form-group">
+          <label for= "first_name" class="control-label col-sm-4">First Name:</label>
+          <input name="first_name"  id="first_name" type="text" value="<?php echo $name;?>" size="30" class="required">
+          <span class="error">* <?php echo $nameErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "last_name" class="control-label col-sm-4">Last Name:</label>
+          <input name="last_name"  id="last_name" type="text" size="30" class="required" value="<?php echo $last_name;?>">
+          <span class="error">* <?php echo $last_nameErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "email" class="control-label col-sm-4">E-mail:</label>
+          <input name="email" id="email" type="text" size="30" class="required" value="<?php echo $email;?>">
+          <span class="error">* <?php echo $emailErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "phone" class="control-label col-sm-4">Phone #:</label>
+          <input name="phone" id="phone" type="text" size="30" class="required" value="<?php echo $phone;?>">
+          <span class="error">* <?php echo $phoneErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "address" class="control-label col-sm-4">Address:</label>
+          <input name="address" id="address" type="text" size="30" class="required" value="<?php echo $address;?>">
+          <span class="error">* <?php echo $addressErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "city" class="control-label col-sm-4">City:</label>
+          <input name="city" id="city" type="text" size="30" class="required" value="<?php echo $city;?>">
+          <span class="error">* <?php echo $cityErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "state" class="control-label col-sm-4">State:</label>
+          <input name="state" id="state" type="text" size="30" class="required" value="<?php echo $state;?>">
+          <span class="error">* <?php echo $stateErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "zip_code" class="control-label col-sm-4">Zip Code:</label>
+          <input name="zip_code" id="zip_code" type="text" size="30" class="required" value="<?php echo $zip_code;?>">
+          <span class="error">* <?php echo $zip_codeErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "website" class="control-label col-sm-4">Website or Domain:</label>
+          <input name="website" id="website" type="text" size="30" class="required" value="<?php echo $website;?>">
+          <span class="error">* <?php echo $websiteErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "hosting" class="control-label col-sm-4">Do you have hosting?</label>
+          <input name="hosting" id="hosting" type="text" size="30" class="required" value="<?php echo $hosting;?>">
+          <span class="error">* <?php echo $hostingErr;?></span>
+        </div>
+        <div class="form-group">
+          <label for= "project" class="control-label col-sm-4">Project Description:</label>
+          <input name="project" id="project" type="text" size="30" class="required" value="<?php echo $project;?>">
+          <span class="error">* <?php echo $projectErr;?></span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Optional Information:</legend>
+        <div class='movingDiv'>
+          <label for="how" class="col-md-4 control-label">How did you hear about us?</label>
+          <input name="how" id="how" type="text" size="30">
+        </div>
+      </fieldset><br>
+      <button type="submit" name="create" class="btn btn-primary">Submit</button>
+      <a href="/project2/jquery.php" class="btn btn-info" role="button">jQuery</a>
+      
+    
+
+    </form>
+
 <?php
 $first_nameErr = $last_nameErr = $emailErr = $phoneErr = $addressErr = $cityErr = $stateErr = $zip_codeErr = $websiteErr = $hostingErr = $projectErr = "";
 $first_name = $last_name = $email = $phone = $address = $city = $state = $zip_code = $website = $hosting = $project =  "";
@@ -206,90 +287,7 @@ function test_input($data) {
 
 
 ?>
-<!-- Begin page content -->
-<div class="container">
-  <div class="page-header">
-    <h1>Registration</h1>
-  </div>
-  <p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project I, please populate the below form to apply for verification.</p>
-  
-</div>
-<div class="container">
-  <div class="container">
-    <p><span class="error">* required field.</span></p>
-  
-    <form name='mainForm' id='mainForm' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <fieldset>
-        <legend>Required Information:</legend>
-        <div class="form-group">
-          <label for= "first_name" class="control-label col-sm-4">First Name:</label>
-          <input name="first_name"  id="first_name" type="text" value="<?php echo $name;?>" size="30" class="required">
-          <span class="error">* <?php echo $nameErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "last_name" class="control-label col-sm-4">Last Name:</label>
-          <input name="last_name"  id="last_name" type="text" size="30" class="required" value="<?php echo $last_name;?>">
-          <span class="error">* <?php echo $last_nameErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "email" class="control-label col-sm-4">E-mail:</label>
-          <input name="email" id="email" type="text" size="30" class="required" value="<?php echo $email;?>">
-          <span class="error">* <?php echo $emailErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "phone" class="control-label col-sm-4">Phone #:</label>
-          <input name="phone" id="phone" type="text" size="30" class="required" value="<?php echo $phone;?>">
-          <span class="error">* <?php echo $phoneErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "address" class="control-label col-sm-4">Address:</label>
-          <input name="address" id="address" type="text" size="30" class="required" value="<?php echo $address;?>">
-          <span class="error">* <?php echo $addressErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "city" class="control-label col-sm-4">City:</label>
-          <input name="city" id="city" type="text" size="30" class="required" value="<?php echo $city;?>">
-          <span class="error">* <?php echo $cityErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "state" class="control-label col-sm-4">State:</label>
-          <input name="state" id="state" type="text" size="30" class="required" value="<?php echo $state;?>">
-          <span class="error">* <?php echo $stateErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "zip_code" class="control-label col-sm-4">Zip Code:</label>
-          <input name="zip_code" id="zip_code" type="text" size="30" class="required" value="<?php echo $zip_code;?>">
-          <span class="error">* <?php echo $zip_codeErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "website" class="control-label col-sm-4">Website or Domain:</label>
-          <input name="website" id="website" type="text" size="30" class="required" value="<?php echo $website;?>">
-          <span class="error">* <?php echo $websiteErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "hosting" class="control-label col-sm-4">Do you have hosting?</label>
-          <input name="hosting" id="hosting" type="text" size="30" class="required" value="<?php echo $hosting;?>">
-          <span class="error">* <?php echo $hostingErr;?></span>
-        </div>
-        <div class="form-group">
-          <label for= "project" class="control-label col-sm-4">Project Description:</label>
-          <input name="project" id="project" type="text" size="30" class="required" value="<?php echo $project;?>">
-          <span class="error">* <?php echo $projectErr;?></span>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Optional Information:</legend>
-        <div class='movingDiv'>
-          <label for="how" class="col-md-4 control-label">How did you hear about us?</label>
-          <input name="how" id="how" type="text" size="30">
-        </div>
-      </fieldset><br>
-      <button type="submit" name="create" class="btn btn-primary">Submit</button>
-      <a href="/project2/jquery.php" class="btn btn-info" role="button">jQuery</a>
-      
-    
 
-    </form>
 
     <?php
       require_once 'login.php';
