@@ -23,7 +23,7 @@
 
         3. All of the aforementioned sections are constituents of the general website layout.
 
-    4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with JavaScript.
+    4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with in-line php-Regex.
 
         5. Unlike Project I, Project II form-validation within the "Register section" of landing-page of the site is enabled by manual [php RegEx](http://www.tutorialspoint.com/php/php_regular_expression.htm) performing form-validation via php regular expressions (RegEx) in order to ultimately submit the field-form as a record to the MySQL database residiing on the AWS instance, server-side.
 
