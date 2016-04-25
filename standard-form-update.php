@@ -158,7 +158,7 @@
 
       echo <<<_END
      
-      <form action="standard-form-nick.php" method="POST">
+      <form action="standard-form.php" method="POST">
        <fieldset>
         <legend>Required Information:</legend>
         <div class="form-group">
