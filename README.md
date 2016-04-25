@@ -25,9 +25,9 @@
 
     4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with in-line [php RegEx](http://www.tutorialspoint.com/php/php_regular_expression.htm).
 
-        5. Unlike Project I, Project II form-validation within the "Register section" of landing-page of the site is enabled by manual php RegEx performing form-validation via php regular expressions (RegEx) in order to ultimately submit the field-form as a record to the MySQL database residiing on the AWS instance, server-side.
+        5. Unlike Project I, Project II form-validation within the "Register section" of landing-page of the site is enabled by manual php RegEx performing form-validation in order to ultimately submit the field-form as a record to the MySQL database residiing on the AWS instance, server-side.
 
-        6. If the user were to test the validation without populating the necessary fields (in this case, all), the form will not process and flag required fields.  However, if the user populates every field, albeit incorrectly, the form will not process as the php RegEx ccounts for all of the required formats listed.
+        6. If the user were to test the validation without populating the necessary fields (in this case, all), the form will not process and flag required fields.  However, if the user populates every field incorrectly the form will not process as the php RegEx accounts for all of the required formats listed.
 
             2. First Name
 
