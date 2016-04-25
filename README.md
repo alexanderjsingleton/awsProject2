@@ -21,7 +21,7 @@
 
           1. Please note, all Bootstrap files are retrieved remotely via the following URL's `https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css` & `https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js`.
 
-        3. All of the aforementioned sections are constituents of the general website layout.https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwi-iuX11qjMAhUqtYMKHU_-AhoQjRwIBw&url=http%3A%2F%2Fwww.tshirtsonscreen.com%2Fsilicon-valley-i-know-html-how-to-meet-ladies%2F&psig=AFQjCNFMqpyrV7xjscafygaWn8HUrcbDqw&ust=1461635562055513
+        3. All of the aforementioned sections are constituents of the general website layout.
 
     4. Upon populating the form on the landing -page, then clicking on the "Register" tab within the navigation-bar menu, the user will be directed to a page featuring the page title, a subheader including a brief explanation, and then body content instructing the user to access the alternative form featuring standard form-validation with JavaScript.
 
