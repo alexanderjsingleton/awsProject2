@@ -26,6 +26,7 @@
   <![endif]-->
 </head>
 <body>
+  <?php include_once("analyticstracking.php") ?>
   <!-- Fixed navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -46,7 +47,9 @@
           <li><a href="/project2/standard-form.php">Register</a></li>
           <li><a href="/project2/jquery.php">Members</a></li>
           <li><a href="/project2/standard-form-update.php">Revise</a></li>
-          <li><a href="https://github.com/alexanderjsingleton/awsProject2/blob/master/README.md">Dox</a></li>
+          <li><a href="/project2/dox.php">Dox</a></li>
+        
+      
           
           
         </li>
@@ -66,7 +69,7 @@
 </div>
 <div class="container">
   <div class="container">
-    <p><span class="error"><p class="lead">If you would like to request membership to GWMSIST_ISTM_6205 Project II, please populate the below form and click "Submit" to apply for verification.</p></span></p>
+    <p><span class="error"><p class="lead">If you would like to request membership, please populate the below form and click "Submit" to apply for verification.</p></span></p>
   
     <form name='mainForm' id='mainForm' method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <fieldset>
@@ -421,6 +424,16 @@ _END;
   </div><!--/.nav-collapse -->
 </div>
 </nav>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77083433-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </footer>
 <!-- Bootstrap core JavaScript
   ================================================== -->
